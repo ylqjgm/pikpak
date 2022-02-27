@@ -850,11 +850,6 @@ import axios from 'axios';
     if(res.data.medias && res.data.medias.length) {
       url = res.data.medias[0]?.link?.url || url
     }
-    const proxyArray = JSON.parse(window.localStorage.getItem('proxy') || '[]')
-    if (proxyArray.length > 0) {
-      const index = Math.floor((Math.random() * proxyArray.length))
-      url = proxyArray[index] + '/' + url
-    }
     let postData:any = {
         id:'',
         jsonrpc:'2.0',
